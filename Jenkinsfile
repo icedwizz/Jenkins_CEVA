@@ -1,61 +1,48 @@
-pipeline {
-    agent any
-
-    stages {
-        stage('Checkout') {
-		steps {	
-		echo 'Checking out repo..'
-		checkout scm
-		sh("pwd")
-		sh("ls")
-		echo 'Checked out repo...'
-		
-		}
-	}	       
-        stage('Get-Roles') {
-		steps{
-             	echo 'Getting Roles..'
-		script {
-			 def roles = readFile("${WORKSPACE}/roles.csv")
-			 echo(roles)
-			}
-		}
+pipeline = {
+    stage('Checkout') {
+        echo "Checking out repo.."
+        checkout scm
+        echo "Checked out repo..."
+    }
+    stage('Get-Roles') {
+        def roles = readFile("${WORKSPACE}/roles.csv")
+        echo(roles)
+    }
+    stage('Get-Images') {
+        def images = readFile("${WORKSPACE}/about-dialog-logo.png")
+        //echo(images)
+    }
+    stage('Build-Release') {
+		echo 'Build Release'
 	}
-	   
-	  stage('Get-Images') {
-		 steps{
-		  echo 'Getting images..' 
-			 script{
-				 def images = readFile("${WORKSPACE}/about-dialog-logo.png")
-				 //echo(images)
-			 }
-		 }	
-	  }
-	   stage('Build-Release') {
-		 steps{
-		 echo 'Build Release'
-		  
-			 }
-		 	
-	  }
-	    stage('Test') {
-		    steps{
-		    echo 'Testing...'
-		    }
-	    }
-	    stage('Dev-Release') {
-		    steps {
-		    	sh("ls -a")
-			sh("pwd")
-			sh("cd")
-		    	sh("chmod +x ${WORKSPACE}/dev/devRelease.sh")
-	 	    	sh("${WORKSPACE}/dev/devRelease.sh")
-		    	echo 'Release to QA'
-		    }
-		    
-		    
-	    }
+    stage('Test') {
+        echo 'Testing...'
+    }
+    stage('Dev-Release') {
+        sh("dir")
+        echo("${WORKSPACE"}")
+        //sh("chmod +x ${WORKSPACE}/devRelease.sh")
+        //sh("${WORKSPACE}/devRelease.sh")
+        echo 'Release to QA'
     }
 }
-	    
-    
+
+
+postFailure = {
+    echo "Pipeline failed"
+}
+
+postAlways = {
+    echo "I always run"
+}
+
+node {
+    try {
+        pipeline()
+    } catch (e) {
+        postFailure()
+        throw e
+    } finally {
+        postAlways()
+    }
+}
