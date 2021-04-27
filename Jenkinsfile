@@ -20,7 +20,7 @@ pipeline = {
     }
     stage('Dev-Release') {
         withEnv(["PATH+EXTRA=/cygwin64/bin"]) {
-            sh "echo hello"
+            sh 'echo hello'
         }
 
         // sh("dir")
