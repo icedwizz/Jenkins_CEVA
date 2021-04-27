@@ -1,5 +1,6 @@
 pipeline = {
     stage('Checkout') {
+	    sh 'echo hello'
         echo "Checking out repo.."
         checkout scm
         echo "Checked out repo..."
@@ -20,7 +21,7 @@ pipeline = {
     }
     stage('Dev-Release') {
         withEnv(["PATH+EXTRA=/cygwin64/bin"]) {
-            sh 'echo hello'
+            
         }
 
         // sh("dir")
