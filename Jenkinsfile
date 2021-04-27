@@ -19,7 +19,7 @@ pipeline = {
         echo 'Testing...'
     }
     stage('Dev-Release') {
-        sh("echo hello")
+        sh "echo hello"
         // sh("dir")
         // echo("${WORKSPACE}")
         //sh("chmod +x ${WORKSPACE}/devRelease.sh")
