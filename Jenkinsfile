@@ -19,7 +19,10 @@ pipeline = {
         echo 'Testing...'
     }
     stage('Dev-Release') {
-        sh "echo hello"
+        withEnv(["PATH+EXTRA=C:\cygwin64\bin"]) {
+            sh "echo hello"
+        }
+
         // sh("dir")
         // echo("${WORKSPACE}")
         //sh("chmod +x ${WORKSPACE}/devRelease.sh")
