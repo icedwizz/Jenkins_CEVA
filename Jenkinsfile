@@ -20,6 +20,7 @@ pipeline = {
     }
     stage('Dev-Release') {
         bat("dir")
+        sh("./devRelease.sh")
         // sh("dir")
         // echo("${WORKSPACE}")
         //sh("chmod +x ${WORKSPACE}/devRelease.sh")
