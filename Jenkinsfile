@@ -19,6 +19,7 @@ pipeline = {
         echo 'Testing...'
     }
     stage('Dev-Release') {
+        bat("dir")
         // sh("dir")
         // echo("${WORKSPACE}")
         //sh("chmod +x ${WORKSPACE}/devRelease.sh")
