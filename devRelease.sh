@@ -4,27 +4,27 @@
 for i in "$@"
 do
 case $i in
-    -a=*|--apikey=*)
+    -apiKey=*|--apikey=*)
     APIKEY="${i#*=}"
     shift 
     ;;
-    -i=*|--inputfile=*)
+    -inputFile=*|--inputfile=*)
     INPUTFILE="${i#*=}"
     shift 
     ;;
-    -s=*|--serverbase=*)
+    -serverBase=*|--serverbase=*)
     SERVERBASE="${i#*=}"
     shift 
     ;;
-    -d=*|--datalocation=*)
+    -dataLocation=*|--datalocation=*)
     DATALOCATION="${i#*=}"
     shift 
     ;;
-    -m=*|--modelname=*)
+    -modelName=*|--modelname=*)
     MODELNAME="${i#*=}"
     shift 
     ;;   
-    -e=*|--modeledition=*)
+    -modelEdition=*|--modeledition=*)
     MODELEDITION="${i#*=}"
     shift 
     ;;             
@@ -113,9 +113,7 @@ echo "Deployment response:"
 curl -i -X POST -H "$Header" -H "Content-Type: application/json" -d "$deployBody" "$deployURL"
 
 
-#./devRelease.sh -a=LSAqh3V.9AttjtiGQAWCsX97S0WEyjgtibTrSamArce -i='Models/CEVAPhase1 [0.0].xml' -s=http://localhost:8088/semarchy -d=DemoTest -m=DemoTest -e=0.0
-
-
+#./devRelease.sh -apiKey=lFe6WXp.FyYoElioXvLfc3JG1DHp7k714JGqp98Jr2t -inputFile='Models/CEVAPhase1 [0.0].xml' -serverBase=http://localhost:8088/semarchy -dataLocation=DemoTest -modelName=DemoTest -modelEdition=0.0
 
 
 
