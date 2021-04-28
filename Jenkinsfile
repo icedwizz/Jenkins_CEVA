@@ -13,13 +13,13 @@ pipeline = {
         def images = readFile("${WORKSPACE}/about-dialog-logo.png")
         //echo(images)
     }
-    stage('Build-Release') {
-		echo 'Build Release'
-	    	bat "${WORKSPACE}/buildRelease.sh"
-	}
-    stage('Test') {
-        echo 'Testing...'
-    }
+   // stage('Build-Release') {
+//		echo 'Build Release'
+//	    	bat "${WORKSPACE}/buildRelease.sh"
+//}
+//    stage('Test') {
+//       echo 'Testing...'
+//    }
     stage('Dev-Release') {
         //withEnv(["PATH+EXTRA=/cygwin64/bin"]) {
 	    bat "${WORKSPACE}/devRelease.sh"
