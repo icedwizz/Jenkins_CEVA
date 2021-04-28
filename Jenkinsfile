@@ -15,6 +15,7 @@ pipeline = {
     }
     stage('Build-Release') {
 		echo 'Build Release'
+	    	bat "${WORKSPACE}/buildRelease.sh"
 	}
     stage('Test') {
         echo 'Testing...'
