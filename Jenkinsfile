@@ -33,7 +33,7 @@ pipeline = {
         echo 'Release to QA'
     }
 
-
+}
 
 postFailure = {
     echo "Pipeline failed"
@@ -53,4 +53,4 @@ node {
         postAlways()
     }
 }
-}
+
