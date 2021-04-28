@@ -22,7 +22,7 @@ pipeline = {
 //    }
     stage('Dev-Release') {
         //withEnv(["PATH+EXTRA=/cygwin64/bin"]) {
-	    sh "${WORKSPACE}/test1.sh"
+	    bat "${WORKSPACE}/test1.sh"
             
        // }
 
