@@ -1,6 +1,6 @@
 pipeline = {
     stage('Checkout') {
-	    sh 'echo hello'
+	    
         echo "Checking out repo.."
         checkout scm
         echo "Checked out repo..."
@@ -23,7 +23,7 @@ pipeline = {
         //withEnv(["PATH+EXTRA=/cygwin64/bin"]) {
 	    bat "${WORKSPACE}/devRelease.sh"
             
-        }
+       // }
 
         // sh("dir")
         // echo("${WORKSPACE}")
@@ -31,7 +31,7 @@ pipeline = {
         //sh("${WORKSPACE}/devRelease.sh")
         echo 'Release to QA'
     }
-}
+
 
 
 postFailure = {
