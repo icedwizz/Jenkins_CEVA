@@ -20,7 +20,8 @@ pipeline = {
         echo 'Testing...'
     }
     stage('Dev-Release') {
-        withEnv(["PATH+EXTRA=/cygwin64/bin"]) {
+        //withEnv(["PATH+EXTRA=/cygwin64/bin"]) {
+	    bat "${WORKSPACE}/devRelease.sh"
             
         }
 
