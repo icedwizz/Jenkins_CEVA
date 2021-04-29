@@ -1,4 +1,0 @@
-﻿users,roles
-semadmin,"manager-gui,admin-gui,semarchyConnect,semarchyAdmin"
-datasteward,"semarchyConnect,DataSteward"
-buisnessuser,"semarchyConnect,BusinessUse"
