@@ -16,7 +16,7 @@ pipeline = {
 
     stage('Dev-Release') {
         //withEnv(["PATH+EXTRA=/cygwin64/bin"]) {
-	    bat "${WORKSPACE}/Scripts/test1.sh"
+	    bat "${WORKSPACE}/Scripts/devRelease.sh -apiKey=ubXtYtO.fQN3Z20wIpZEluUGN1XmySrUbt1Tls9JLBX -inputFile='Models/CEVAPhase1 [0.0].xml' -serverBase=http://localhost:8088/semarchy -dataLocation=DemoTest -modelName=DemoTest -modelEdition=0.0"
             echo 'Release to QA'
     }
 
