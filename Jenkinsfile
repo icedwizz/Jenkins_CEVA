@@ -3,34 +3,21 @@ pipeline = {
 	    
         echo "Checking out repo.."
         checkout scm
-        echo "Checked out repo..."
+       
     }
     stage('Get-Roles') {
-        def roles = readFile("${WORKSPACE}/roles.csv")
+        def roles = readFile("${WORKSPACE}/Roles/roles.csv")
         echo(roles)
     }
     stage('Get-Images') {
-        def images = readFile("${WORKSPACE}/about-dialog-logo.png")
+        def images = readFile("${WORKSPACE}/Images/semarchy.png")
         //echo(images)
     }
-   // stage('Build-Release') {
-//		echo 'Build Release'
-//	    	bat "${WORKSPACE}/buildRelease.sh"
-//}
-//    stage('Test') {
-//       echo 'Testing...'
-//    }
+
     stage('Dev-Release') {
         //withEnv(["PATH+EXTRA=/cygwin64/bin"]) {
-	    bat "${WORKSPACE}/test1.sh"
-            
-       // }
-
-        // sh("dir")
-        // echo("${WORKSPACE}")
-        //sh("chmod +x ${WORKSPACE}/devRelease.sh")
-        //sh("${WORKSPACE}/devRelease.sh")
-        echo 'Release to QA'
+	    bat "${WORKSPACE}/Scripts/devRelease.sh -apiKey=ubXtYtO.fQN3Z20wIpZEluUGN1XmySrUbt1Tls9JLBX -inputFile='Models/CEVAPhase1 [0.0].xml' -serverBase=http://localhost:8088/semarchy -dataLocation=DemoTest -modelName=DemoTest -modelEdition=0.0"
+            echo 'Release to QA'
     }
 
 }
