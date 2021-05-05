@@ -27,7 +27,8 @@ pipeline = {
 	}
     
     stage('Git-Checkin') {
-	bat "https://github.com/icedwizz/Jenkins_CEVA"
+	bat "git status"
+	//bat "https://github.com/icedwizz/Jenkins_CEVA"
 		
 	}
 	
