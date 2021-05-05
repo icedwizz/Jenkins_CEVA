@@ -28,10 +28,10 @@ pipeline = {
     
     stage('Git-Checkin') {
         bat("git status")
-        bat("git add --all")
+        bat("git add -all")
         bat("git status")
-        
-        bat "git commit -m new model"
+
+        bat "git commit"
         bat "git push origin main"
         //bat "https://github.com/icedwizz/Jenkins_CEVA"
 	}
