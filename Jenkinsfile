@@ -23,18 +23,14 @@ pipeline = {
           
     //}
     stage('Build-Release') {
-	   model_output = bat(
-            script: "${WORKSPACE}/Scripts/buildRelease.sh -apiKey=ubXtYtO.fQN3Z20wIpZEluUGN1XmySrUbt1Tls9JLBX -serverBase=http://localhost:8088/semarchy -modelName=DemoTest -devModelEdition=0.1 -o='Models' -r='This is test. Building release for DemoTest [0.1]'",
-            returnStout: true
-       ).trim()
-       echo model_output
+        bat("${WORKSPACE}/Scripts/buildRelease.sh -apiKey=ubXtYtO.fQN3Z20wIpZEluUGN1XmySrUbt1Tls9JLBX -serverBase=http://localhost:8088/semarchy -modelName=DemoTest -devModelEdition=0.1 -o='Models' -r='This is test. Building release for DemoTest [0.1]'")
 	}
     
     stage('Git-Checkin') {
-        bat "git status"
-        bat "git add ."
-        bat "git commit -m 'new model'"
-        bat "git push -u origin main"
+        bat("git status")
+        bat("git add --all")
+        bat "git commit -m new model"
+        bat "git push origin main"
         //bat "https://github.com/icedwizz/Jenkins_CEVA"
 	}
 	
