@@ -27,9 +27,7 @@ pipeline = {
 	}
     
     stage('Git-Checkin') {
-	git add -A
-	git commit -m 'add model'
-	git push
+	bat "https://github.com/icedwizz/Jenkins_CEVA"
 		
 	}
 	
