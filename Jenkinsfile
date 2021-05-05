@@ -23,7 +23,7 @@ pipeline = {
           
     //}
     stage('Build-Release') {
-	   bat "${WORKSPACE}/Scripts/ sh buildRelease.sh -apiKey=ubXtYtO.fQN3Z20wIpZEluUGN1XmySrUbt1Tls9JLBX -serverBase=http://localhost:8088/semarchy -modelName=DemoTest -devModelEdition=0.1 -o="{WORKSPACE}/Models" -r='This is test. Building release for DemoTest [0.1]'"
+	   bat "${WORKSPACE}/Scripts/buildRelease.sh -apiKey=ubXtYtO.fQN3Z20wIpZEluUGN1XmySrUbt1Tls9JLBX -serverBase=http://localhost:8088/semarchy -modelName=DemoTest -devModelEdition=0.1 -o="{WORKSPACE}/Models" -r='This is test. Building release for DemoTest [0.1]'"
 	}
 	
 
