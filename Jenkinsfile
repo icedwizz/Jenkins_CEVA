@@ -27,7 +27,7 @@ pipeline = {
 	}
     
     stage('Git-Checkin') {
-	git add Models
+	git add -A
 	git commit -m 'add model'
 	git push
 		
