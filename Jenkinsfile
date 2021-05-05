@@ -31,7 +31,7 @@ pipeline = {
         bat("git add --all")
         bat("git status")
 
-        bat "git commit"
+        bat "git commit -m addModels"
         bat "git push origin main"
         //bat "https://github.com/icedwizz/Jenkins_CEVA"
 	}
