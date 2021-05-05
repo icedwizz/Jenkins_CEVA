@@ -28,7 +28,7 @@ pipeline = {
     
     stage('Git-Checkin') {
         bat("git status")
-        bat("git add -all")
+        bat("git add --all")
         bat("git status")
 
         bat "git commit"
