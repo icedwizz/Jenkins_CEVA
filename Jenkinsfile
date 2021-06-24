@@ -27,16 +27,16 @@ pipeline = {
 	}
     
   stage('Git-Checkin') {
-        bat("git status")
-        bat "git checkout main"
-        bat "git pull origin main"
+        //bat("git status")
+       // bat "git checkout main"
+        //bat "git pull origin main"
         bat("git add --all")
-        bat("git status")
+        //bat("git status")
 
         bat "git commit -m addModels"
-        bat "git branch"
+        //bat "git branch"
         bat "git push origin main"
-       bat "https://github.com/icedwizz/Jenkins_CEVA"
+      // bat "https://github.com/icedwizz/Jenkins_CEVA"
 	}
 	
 
