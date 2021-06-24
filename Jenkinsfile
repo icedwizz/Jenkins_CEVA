@@ -28,8 +28,8 @@ pipeline = {
     
   stage('Git-Checkin') {
         //bat("git status")
-       // bat "git checkout main"
-        //bat "git pull origin main"
+        bat "git checkout main"
+        bat "git pull origin main"
         bat("git add --all")
         //bat("git status")
 
